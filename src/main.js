@@ -1,6 +1,3 @@
-//http://www.omdbapi.com/?i=tt3896198&apikey=c26bee66&s=godfather
-//const request = new Request('http://www.omdbapi.com/?i='+imdbId+'&apikey=c26bee66&');
-
 // Filtros
 
 

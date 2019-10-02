@@ -11,51 +11,6 @@ body{
     background-color:rgba(31, 31, 31, 1);
 }
 
-/* barra de navegación bootstrap
-nav {
-    width: 95%;
-    margin: 0px 60px 15px 60px;
-    max-height: 50px;
-    box-shadow: 1px 2px 3px rgb(0,0,0,5);
-    color: brown;
-    background-color:rgb(26, 21, 21);;
- }
- .nav a {
-    margin-bottom: 40px;
- }
- nav div ul li {
-     list-style: none;
- }
- .dropdown-menu a{
-    background-color: rgb(66, 62, 56);
-    color: white;
- }
- .dropdown-menu {
-    background-color:white;
- }
- .navbar-light .navbar-brand{
-     color: white;
- }
- .navbar-light .navbar-nav .nav-link {
-     background-color:rgb(26, 21, 21);
-     color: white;
- }
- [type=submit]:not(:disabled), button:not(:disabled){
-     background-color: white;
- }
- strong{
-     width: 30cm;
-     justify-content: center;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     color: white;
-     background-color:rgb(26, 21, 21);
-     font-size: 50px;
-     line-height: 1.5;
-     font-style: italic;
-     text-transform: capitalize;
- }
- */
-
 /* Nombre de película en páginas interiores*/
 h1{
     color:white;

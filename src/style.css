@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+}
+
+nav {
+    width: 95%; 
+    margin: 0px 60px 15px 60px;  
+    max-height: 50px; 
+    box-shadow: 1px 2px 3px rgb(0,0,0,5);
+    background: rgb(238, 219, 195);
+}
+
+.nav a {
+    margin-bottom: 40px;
+   
+}
+
+ nav div ul li {
+     list-style: none;
+   
+ }
+ .dropdown-menu a{
+    background: rgb(238, 219, 195);
+    
+ }
+ .dropdown-menu {
+    background-color: rgb(238, 219, 195);
+    
+ }

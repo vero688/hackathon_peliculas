@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peliculas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <input id="search" placeholder="Búsqueda" type="text">
-        <button id="searchBtn">Buscar</button>
-    </nav>
-    <section>
-        <button class="btnFilters" id="btnBestRated" value="brFilter">Top 10 Mejor Evaluadas</button>
-        <button class="btnFilters" id="btnMostVoted" value="mvFilter">Top 10 Más Votadas</button>
-        <button class="btnFilters" id="btnMostAwards" value="maFilter">Las Más Premiadas</button>
-    </section>
-    <div id="container">
-        
-    </div>
+    <title>Sitio Películas</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  </head>
 
-    <script src="main.js"></script>
-</body>
+
+  <body>
+  
+    <nav class="search-container">
+      <input class="search" id="search" placeholder="Búsqueda" type="text">
+      <button class="search-button" id="searchBtn">Buscar</button>
+    </nav>
+    
+
+      <div id="movie-container">
+          <section>
+          <h2>Película de la semana</h2>
+          <a href="https://i.ibb.co/wQ6h20Y/moonlight.jpg"><img src="https://i.ibb.co/wQ6h20Y/moonlight.jpg" alt="moonlight" class="movie-poster"></a>
+        </section>
+
+        <section class="review-container">
+          <h3>Nombre de la Película</h3>
+          <p class="paragraph">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <a href="#" class="read-more">Seguir leyendo</a>
+        </section>
+
+      </div>
+
+      <section class="filter-menu">
+        <button class="filter-button" id="btnBestRated" value="brFilter">Top 10 Mejor Evaluadas</button>
+        <button class="filter-button" id="btnMostVoted" value="mvFilter">Top 10 Más Votadas</button>
+        <button class="filter-button" id="btnMostAwards" value="maFilter">Las Más Premiadas</button>
+    </section>
+
+  <div class="container" id="container">
+  </div>
+
+  <script src="main.js"></script>
+  </body>
 </html>

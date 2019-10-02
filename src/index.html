@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peliculas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+            <input id="search" placeholder="Búsqueda" type="text">
+            <button id="searchBtn">Buscar</button>
+    </nav>
     <section>
-            <button id="btn-bestRated">Top 10 Mejor Evaluadas</button>
-            <button id="btn-mostVoted">Top 10 Más Votadas</button>
-            <button id="btn-mostAwards">Las Más Premiadas</button>
+            <button class="btnFilters" id="btnBestRated" value="brFilter">Top 10 Mejor Evaluadas</button>
+            <button class="btnFilters" id="btnMostVoted" value="mvFilter">Top 10 Más Votadas</button>
+            <button class="btnFilters" id="btnMostAwards" value="maFilter">Las Más Premiadas</button>
     </section>
         <div id="container">
     

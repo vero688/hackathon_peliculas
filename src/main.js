@@ -37,7 +37,7 @@ mostVoted.addEventListener('click', showMostVoted);
         fetch('http://www.omdbapi.com/?i='+imdbId+'&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {
-            document.getElementById("container").innerHTML +=
+            document.getElementById("container-two").innerHTML +=
             `<div class="bestResult">
             <img class="poster" src=${data.Poster}>
             <h2 class="title">${data.Title}</h2>
@@ -59,7 +59,7 @@ awards.addEventListener('click', showMostAwards);
         fetch('http://www.omdbapi.com/?i='+imdbId+'&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {
-            document.getElementById("container").innerHTML +=
+            document.getElementById("container-three").innerHTML +=
             `<div class="bestResult">
             <img class="poster" src=${data.Poster}>
             <h2 class="title">${data.Title}</h2>
@@ -69,4 +69,3 @@ awards.addEventListener('click', showMostAwards);
         })
     })
 }
-

@@ -7,16 +7,22 @@
     <title>Peliculas</title>
 </head>
 <body>
-    <section>
-            <button id="btn-bestRated">Top 10 Mejor Evaluadas</button>
-            <button id="btn-mostVoted">Top 10 Más Votadas</button>
-            <button id="btn-mostAwards">Las Más Premiadas</button>
-    </section>
-        <div id="container"></div>
+    <nav>
+        <input id="search" placeholder="Búsqueda" type="text">
+        <button id="searchBtn">Buscar</button>
+</nav>
+<section>
+        <button class="btnFilters" id="btnBestRated" value="brFilter">Top 10 Mejor Evaluadas</button>
+        <button class="btnFilters" id="btnMostVoted" value="mvFilter">Top 10 Más Votadas</button>
+        <button class="btnFilters" id="btnMostAwards" value="maFilter">Las Más Premiadas</button>
+</section>
+    <div id="container">
+
+</div>
         
 
 
-
+    <script src="data.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

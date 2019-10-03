@@ -1,8 +1,3 @@
-// const bestRatedImdb = ["tt0068646" , "tt0111161" , "tt0071562" , "tt1375666" , "tt0137523" , "tt0468569" , "tt0050083" , "tt0120737" , "tt0133093" , "tt0114369"];
-// const mostVotedImdb = ["tt0110912" , "tt0109830" , "tt1345836" , "tt0816692" , "tt0060315" , "tt0172495" , "tt0372784" , "tt0102926" , "tt0361748" , "tt0076759"];
-// const mostAwards = ["tt0120338", "tt0167260" , "tt0052618" , "tt0055614" , "tt0116209" , "tt0051658" , "tt0093389"];
-// let btnFilters = document.getElementsByClassName("btnFilters");
-
 // Búsqueda
 document.getElementById('searchBtn').addEventListener('click', function(){
     const byTitle = document.getElementById('search').value;
@@ -64,74 +59,83 @@ document.getElementById('searchBtn').addEventListener('click', function(){
         }
    });
 });
+ //MOSTRANDO TOP 10 EVALUADAS POR CRITICOS
+const bestRatedImdb = ["tt0068646" , "tt0111161" , "tt0071562" , "tt1375666" , "tt0137523" , "tt0468569" , "tt0050083" , "tt0120737" , "tt0133093" , "tt0114369"];
 
-    
-    /*for (let i = 0; i < btnFilters.length; i++){
-        btnFilters[i].addEventListener('click', () => {
-            valueBtn = btnFilters[i].value
-            console.log(valueBtn);
-            if(valueBtn==="brFilter"){
-                let bestRated = document.getElementById("btnBestRated");
-                console.log(bestRated);
-                bestRated.addEventListener('click', showBestRated);
-                console.log(bestRated);
-                function showBestRated()
-                {bestRatedImdb.map(function(imdbId){
-                                        fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full'+'&apikey=c26bee66&')
-                    .then(result => result.json())
-                    .then(data => {
-                                                document.getElementById("container").innerHTML +=
-                        `<div class="bestResult">
-                        <img class="poster" src=${data.Poster}>
-                        <h2 class="title">${data.Title}</h2>
-                        <p class="plot">${data.Plot}</p>
-                        <p class="actors">${data.Actors}</p>
-                        <p class="genre">${data.Genre}</p></div>`
-                    })
-                })
-            }
-        } console.log(bestRatedImdb);
-        if(valueBtn==="mvFilter"){
-            let mostVoted = document.getElementById("btnMostVoted");
-    
-            mostVoted.addEventListener('click', showMostVoted);
-    
-            function showMostVoted()
-            {mostVotedImdb.map(function(imdbId){
-                fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full'+'&apikey=c26bee66&')
-                .then(result => result.json())
-                .then(data => {
-                    document.getElementById("container").innerHTML +=
-                    `<div class="bestResult">
-                    <img class="poster" src=${data.Poster}>
-                    <h2 class="title">${data.Title}</h2>
-                    <p class="plot">${data.Plot}</p>
-                    <p class="actors">${data.Actors}</p>
-                    <p class="genre">${data.Genre}</p></div>`
-                })
-            })
-        }
-    }if(valueBtn==="maFilter"){
-        let awards = document.getElementById("btnMostAwards");
-    
-        awards.addEventListener('click', showMostAwards);
-    
-        function showMostAwards()
-        {mostAwards.map(function(imdbId){
-            fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full'+'&apikey=c26bee66&')
-            .then(result => result.json())
-            .then(data => {
-                document.getElementById("container").innerHTML +=
-                `<div class="bestResult">
-                <img class="poster" src=${data.Poster}>
-                <h2 class="title">${data.Title}</h2>
-                <p class="plot">${data.Plot}</p>
-                <p class="actors">${data.Actors}</p>
-                <p class="genre">${data.Genre}</p></div>`
-            })
-        })
-    }
-    }
-    
-        })
-    }*/
+let bestRated = document.getElementById("btnBestRated");
+
+bestRated.addEventListener('click', showBestRated);
+ 
+    function showBestRated()
+    {bestRatedImdb.map(function(imdbId){
+        fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
+        .then(result => result.json())
+        .then(data => {
+            document.getElementById("container").innerHTML +=
+            `<div class="bestResult">
+            <img class="poster" src=${data.Poster}>
+            <h2 class="title">${data.Title}</h2>
+            <p class="plot"><strong>Reseña: </strong>${data.Plot}</p>
+            <p class="actors"><strong>Protagonistas: </strong>${data.Actors}</p>
+            <p class="genre"><strong>Género: </strong>${data.Genre}</p>
+            <p class="ratins"><strong>Evaluación de críticos: </strong>${data.imdbRating}</p>
+            <br>
+            </div>`
+        })
+    })
+}
+
+//MOSTRANDO 10 MAS RECOMENDADAS PUBLICO
+const mostVotedImdb = ["tt0110912" , "tt0109830" , "tt1345836" , "tt0816692" , "tt1853728" , "tt0172495" , "tt0372784" , "tt0102926" , "tt0361748" , "tt0076759"];
+
+let mostVoted = document.getElementById("btnMostVoted");
+
+mostVoted.addEventListener('click', showMostVoted);
+ 
+    function showMostVoted()
+    {mostVotedImdb.map(function(imdbId){
+        fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
+        .then(result => result.json())
+        .then(data => {
+            document.getElementById("container").innerHTML +=
+            `<div class="bestResult">
+            <img class="poster" src=${data.Poster}>
+            <h2 class="title">${data.Title}</h2>
+            <p class="plot"><strong>Reseña: </strong>${data.Plot}</p>
+            <p class="actors"><strong>Protagonistas: </strong>${data.Actors}</p>
+            <p class="genre"><strong>Género: </strong>${data.Genre}</p>
+            <p class="votes"><strong>Recomendaciones del público: </strong>${data.imdbVotes}</p>
+            <br>
+            </div>`
+        })
+    })
+}
+
+
+//MOSTRANDO PELICULAS QUE HAN GANADO MAS PREMIOS OSCAR
+
+const mostAwards = ["tt0120338", "tt0167260" , "tt0052618" , "tt0055614" , "tt0116209" , "tt0051658" , "tt0093389"];
+
+let awards = document.getElementById("btnMostAwards");
+
+awards.addEventListener('click', showMostAwards);
+ 
+    function showMostAwards()
+    {mostAwards.map(function(imdbId){
+        fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
+        .then(result => result.json())
+        .then(data => {
+            document.getElementById("container").innerHTML +=
+            `<div class="bestResult">
+            <img class="poster" src=${data.Poster}>
+            <h2 class="title">${data.Title}</h2>
+            <p class="plot"><strong>Reseña: </strong>${data.Plot}</p>
+            <p class="actors"><strong>Protagonistas: </strong>${data.Actors}</p>
+            <p class="genre"><strong>Género: </strong>${data.Genre}</p>
+            <p class="awards"><strong>Premios y nominaciones: </strong>${data.Awards}</p>
+            <br>
+            </div>
+            `
+        })
+    })
+}

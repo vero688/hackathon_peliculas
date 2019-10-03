@@ -1,5 +1,6 @@
 // Búsqueda
 document.getElementById('searchBtn').addEventListener('click', function(){
+   
     const byTitle = document.getElementById('search').value;
    const request = new Request('http://www.omdbapi.com/?i=tt0353496&apikey=c26bee66&s='+byTitle);
    fetch(request)
@@ -34,6 +35,7 @@ document.getElementById('searchBtn').addEventListener('click', function(){
        btnShowMore.className = "show-more-button";
        
        btnShowMore.addEventListener('click', () => {
+        document.getElementById("container").innerHTML = '';
            const imdbId = data.Search[i].imdbID;
            fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full'+'&apikey=c26bee66&')
            .then(result => result.json())
@@ -69,6 +71,7 @@ bestRated.addEventListener('click', showBestRated);
     function showBestRated()
     {bestRatedImdb.map(function(imdbId){
         document.getElementById("container").innerHTML = '';
+        
         fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {
@@ -95,6 +98,8 @@ mostVoted.addEventListener('click', showMostVoted);
  
     function showMostVoted()
     {mostVotedImdb.map(function(imdbId){
+        document.getElementById("container").innerHTML = '';
+        
         fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {
@@ -123,6 +128,8 @@ awards.addEventListener('click', showMostAwards);
  
     function showMostAwards()
     {mostAwards.map(function(imdbId){
+        document.getElementById("container").innerHTML = '';
+        
         fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {

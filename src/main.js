@@ -68,6 +68,7 @@ bestRated.addEventListener('click', showBestRated);
  
     function showBestRated()
     {bestRatedImdb.map(function(imdbId){
+        document.getElementById("container").innerHTML = '';
         fetch('http://www.omdbapi.com/?i='+imdbId+'&plot=full&apikey=c26bee66&')
         .then(result => result.json())
         .then(data => {

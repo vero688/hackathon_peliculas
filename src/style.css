@@ -1,9 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+=======
+>>>>>>> cee9c5fa4a38ead8a773d1f112fa50d0641902ab
 }
 
 body{

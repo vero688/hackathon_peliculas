@@ -1,63 +1,274 @@
 *{
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;    
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 body{
-    background-color: rgb(26, 21, 21);
+    font-family: 'Roboto', sans-serif;
+    color: #828282;
+
+    background-image: url();
+    background-color:rgba(31, 31, 31, 1);
 }
 
-nav {
-    width: 95%; 
-    margin: 0px 60px 15px 60px;  
-    max-height: 50px; 
-    box-shadow: 1px 2px 3px rgb(0,0,0,5);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: brown;
-    background-color:rgb(26, 21, 21);;
+/* Nombre de película en páginas interiores*/
+h1{
+    color:white;
+}
+
+/* Título de la sección en el home*/
+h2{
+    color:rgba(246, 27, 106, 1);
+    font-weight: 300;
+    font-size: 20pt;
+}
+
+/* Nombre de película en el home*/
+h3{
+    color:white;
+    font-weight: 200;
+    font-size: 18pt;
+}
+
+/* Nombre de película en el preview*/
+h4{
+    color:white;
+    font-weight: 100;
+    text-align: center;
+    text-justify: center;
+}
+
+/*todos los a*/
+a{
+    text-decoration: none;
+}
+
+/*todos los li*/
+li{
+    list-style: none;
+}
+
+/*Buscador*/
+.search-container{
+    display:flex; 
+    flex-direction: row;
+    margin: 5%;
+}
+
+.search{
+    width: 20%;
+    padding: 10px;
+    outline-style: none;
+    border: none;
+
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-button{
+    width: 15%;
+    padding: 10px;
+    outline-style: none;
+    border: none;
+
+    background-color: rgba(246, 27, 106, 1);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    color: white;
+}
+
+.search-button:hover{
+    background-color: rgb(184, 10, 74);
+}
+
+.search-button:active{
+    background-color: rgb(60, 130, 250);
+}
+
+
+/*película destacada*/
+
+/*Disposición de header, menú de filtros y catálogo de películas*/
+#movie-container, .filter-menu, .movies-catalog{
+    width: 80%;
+    margin: 50px auto;
+
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* visualización de las películas*/
+.container{
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    align-content: center;
+
+    margin: 0 0 50px 0;
+}
+
+.movie-preview{
+    width: 60%;
+}
+
+.name-preview{
+    width: 60%;
+    margin: 10px;
+
+    color:white;
+    font-weight: 100;
+
+    text-align: center;
+    text-justify: center;
+}
+
+.show-more-button{
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    border-style: none;
+
+    background-color: rgba(31, 31, 31, 1);
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+    color: white;
+    font-weight: bold;
+}
+
+.show-more-button:hover{
+    background-color: rgba(246, 27, 106, 1);
+}
+
+
+/* poster película destacada*/
+.movie-poster{
+    width: 50%;
+}
+
+/* link leer más */
+.read-more, :visited{
+    color:rgba(246, 27, 106, 1);
+}
+
+.read-more:hover{
+    color: white;
+}
+
+
+.filter-button{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 30px;
+
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    color: white;
+
+    text-align: center;
+}
+
+
+.filter-button:hover{
+    border: 2px solid rgba(246, 27, 106, 1);
+    background-color: rgba(246, 27, 106, 1);
+}
+
+
+/*Ranking de estrellitas*/
+
+.stars-rating{
+    font-size: 0;
+    display: inline-block;
+}
+
+.stars-rating a{
+    text-decoration: none;
+    display: inline-block;
+
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 15px;
+    margin: 2px;
+}
+
+.stars-rating:hover a{
+    color:  rgba(246, 27, 106, 1);
+}
+
+.stars-rating > a:hover ~ a{
+    color: rgba(255, 255, 255, 0.4);
+
+}
+
+.stars-rating > input:checked ~ label{
+    color:  rgba(246, 27, 106, 1);
+}
+
+.social-bar{
+    position: fixed;
+    right: 0;
+    top: 200px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+    list-style: none;
     
 }
+.icon{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: all 5s;
+    display: inline-block;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.icon:hover{
+    padding: 10px 25px;
+    background: #000000;
 
-.nav a {
-    margin-bottom: 40px;
-    
-   
 }
 
- nav div ul li {
-     list-style: none;
-   
- }
- .dropdown-menu a{
-    background-color: rgb(66, 62, 56);
-    color: white;  
- }
- .dropdown-menu {
-    background-color:white;
-      
- }
- .navbar-light .navbar-brand{
-     color: white;
- }
- .navbar-light .navbar-nav .nav-link {
-     background-color:rgb(26, 21, 21);
-     color: white;
- }
- 
- [type=submit]:not(:disabled), button:not(:disabled){
-     background-color: white;
- }
-
- strong{
-     width: 30cm;
-     justify-content: center;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     color: white;
-     background-color:rgb(26, 21, 21);
-     font-size: 50px;
-     line-height: 1.5;
-     font-style: italic;
-     
-     text-transform: capitalize;
-     
- }
+.icon-facebook2 {
+background: #2e406e;
+}
+.icon-youtube{
+    background: #e83028;
+}
+.icon-instagram{
+    background: #3f60a5;
+}
+.icon-google-plus3{
+    background: #e83028;
+}
+.icoon:first-child{
+border-radius: 1rem 0 0 0;
+}
+.icoon:last-child{
+    border-radius: 1rem 0 0 0;
+    }
